@@ -1,3 +1,4 @@
+// LOG3500 - Devoir 2 - Option 2 (Station Météo)
 /* ==========================================================================
    Tableau de Bord Météo Dynamique — app.js
    Étape 1 : géocodage (nom de ville -> coordonnées)
@@ -205,3 +206,4 @@ form.addEventListener("submit", (event) => {
   clearFieldError();
   searchCity(value);
 });
+Ajout d'un commentaire dans le JavaScript
