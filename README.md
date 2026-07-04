@@ -6,7 +6,7 @@ Application web pour consulter la météo en temps réel.
 
 Ce projet a été réalisé dans le cadre du cours LOG3500 (Conception et programmation de sites Web I) à l'ISTEAH. L'application permet de rechercher une ville et d'obtenir ses conditions météorologiques actuelles.
 
-**Option choisie :** Option 2 (Station Météo)
+**Option choisie :* Option 2 (Station Météo)
 
 ## Fonctionnalités
 
@@ -50,3 +50,4 @@ ISTEAH
 ## Remerciements
 
 Données météo fournies par Open-Meteo.
+Mise à jour du README
