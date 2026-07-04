@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de Bord Météo Dynamique</title>
+  <meta name="description" content="Consultez la météo actuelle de n'importe quelle ville dans le monde.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <svg class="brand__icon" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="20" cy="22" r="10" fill="currentColor" opacity="0.9"/>
+        <path d="M14 32 h20 a7 7 0 0 0 0 -14 a10 10 0 0 0 -19 -3 a8 8 0 0 0 -1 17 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <span class="brand__name">Station Météo</span>
+    </div>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <span class="site-nav__item site-nav__item--active">Tableau de bord</span>
+      <span class="site-nav__item">Prévisions</span>
+      <span class="site-nav__item">Alertes</span>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <section class="search-section" aria-labelledby="search-title">
+      <h1 id="search-title">Quel temps fait-il ailleurs&nbsp;?</h1>
+      <p class="search-section__lede">Entrez le nom d'une ville pour afficher ses conditions atmosphériques actuelles, mises à jour en temps réel.</p>
+
+      <form id="search-form" class="search-form" novalidate>
+        <div class="field">
+          <label for="city-input" class="field__label">Nom de la ville</label>
+          <input
+            type="text"
+            id="city-input"
+            name="city"
+            class="field__input"
+            placeholder="Ex. : Jacmel, Paris, Tokyo..."
+            autocomplete="off"
+            aria-describedby="city-error"
+          >
+          <p id="city-error" class="field__error" role="alert" hidden></p>
+        </div>
+        <button type="submit" class="btn-search">
+          <span>Consulter</span>
+        </button>
+      </form>
+    </section>
+
+    <section class="result-section" aria-live="polite" aria-atomic="true">
+
+      <div id="loader" class="loader" hidden>
+        <span class="loader__ring" aria-hidden="true"></span>
+        <p class="loader__text">Interrogation des capteurs...</p>
+      </div>
+
+      <p id="empty-state" class="empty-state">
+        Aucune station sélectionnée pour l'instant. Lancez une recherche ci-dessus.
+      </p>
+
+      <p id="message-box" class="message-box" hidden></p>
+
+      <article id="weather-card" class="weather-card" hidden>
+        <div class="weather-card__top">
+          <div>
+            <p class="weather-card__eyebrow">Conditions actuelles</p>
+            <h2 id="city-name" class="weather-card__city"></h2>
+          </div>
+          <div class="weather-card__icon" id="weather-icon" aria-hidden="true"></div>
+        </div>
+
+        <p id="weather-temp" class="weather-card__temp"></p>
+        <p id="weather-status" class="weather-card__status"></p>
+
+        <dl class="weather-card__facts">
+          <div class="fact">
+            <dt>Vitesse du vent</dt>
+            <dd id="weather-wind"></dd>
+          </div>
+          <div class="fact">
+            <dt>Dernière mise à jour</dt>
+            <dd id="weather-updated"></dd>
+          </div>
+        </dl>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Devoir 2 — LOG3500 · Conception et programmation de sites Web I · Été 2026</p>
+    <p>Données fournies par <span>Open-Meteo</span></p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
